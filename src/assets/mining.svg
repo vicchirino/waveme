@@ -1,0 +1,14 @@
+<svg height="256" width="256" xmlns="">
+  <g data-name="">
+    <g data-name="">
+      <circle cx="128" cy="128" data-name="" r="128" fill="#5b9074"/>
+      <path 
+        d="m284 981-57 89 57-26 55 26Zm0 75-59 26 59 33 58-33Zm0 71 58-34-57 82-58-82Z"
+        data-name=""
+        transform="translate(-152 -949)"
+        fill="#fff"
+        fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>
+
