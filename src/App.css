@@ -2,14 +2,21 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 64px;
+  padding: 64px;
+}
+
+.tableContainer {
+ display: flex;
+ justify-content: center;
+ width: 100%;
+ padding: 64px;
+ max-width: 600px;
 }
 
 .dataContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 600px;
 }
 
 .header {
@@ -28,6 +35,8 @@
 .body {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .waveButton {
@@ -36,5 +45,6 @@
   padding: 8px;
   border: 0;
   border-radius: 5px;
-  
+  max-width: 200px;
 }
+
