@@ -1,0 +1,51 @@
+.container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.topArrow {
+  stroke-dasharray: 3;
+  animation: knot 30s linear infinite reverse;
+}
+
+.bottomArrow {
+  stroke-dasharray: 3;
+  animation: knot 30s linear infinite reverse;
+
+}
+
+.knot {
+  stroke-dasharray: 3;
+  animation: knot 30s linear infinite reverse;
+}
+
+.triangles, .circle {
+
+  animation: beat 0.5s infinite alternate;
+	transform-origin: center;
+
+}
+
+
+
+@keyframes beat {
+	to { transform: scale(0.95); }
+}
+  
+
+@keyframes knot {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+@keyframes fill-in {
+  to {
+    opacity: 1;
+  }
+}
