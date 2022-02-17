@@ -2,9 +2,9 @@ import './App.css';
 import React from "react"
 import { ethers } from "ethers"
 import abi from "./utils/WavePortal.json";
-import Loader from './Loader/Loader';
-import { Wave } from './Types';
-import WavesTable from './WavesTable/WavesTable';
+import Loader from './Components/Loader/Loader';
+import { Wave } from './types';
+import WavesTable from './Components/WavesTable/WavesTable';
 
 function App() {
   const [loading, setIsLoading] = React.useState<Boolean>(false)

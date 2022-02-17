@@ -1,4 +1,4 @@
-import { Wave } from "../Types"
+import { Wave } from "../../types"
 import './WavesTable.css';
 
 type WavesTableProps = {
