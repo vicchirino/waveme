@@ -99,7 +99,7 @@ function App() {
         
         // Execute the actual wave from your smart contract
         setIsLoading(true)
-        const waveTxn = await wavePortalContract.wave("Hola");
+        const waveTxn = await wavePortalContract.wave("Hola", { gasLimit: 300000 })
         console.log("Mining...", waveTxn.hash);
         
         await waveTxn.wait();
