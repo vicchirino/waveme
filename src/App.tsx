@@ -17,7 +17,7 @@ function App() {
   const [allWaves, setAllWaves] = React.useState<Wave[]>([]);
 
   // Create a variable here that holds the contract address after you deploy!
-  const contractAddress = "0xDAe2D2414C086A7D793D47bBEDe0Fd51B962d760";
+  const contractAddress = "0x16f50376217037Da020e8A6FDa65D41961cbC8B4";
 
   // Create a variable here that references the abi content!
   const contractABI = abi.abi;
@@ -80,6 +80,7 @@ function App() {
   // This runs our function when the page loads
   React.useEffect(() => {
     checkIfWalletIsConnected()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   const wave = async () => {
