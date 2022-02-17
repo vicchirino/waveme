@@ -3,16 +3,10 @@ import React from "react"
 import { ethers } from "ethers"
 import abi from "./utils/WavePortal.json";
 import Loader from './Loader/Loader';
-
-type Wave = {
-  address: string
-  message: string
-  timestamp: Date
-}
+import { Wave } from './Types';
+import WavesTable from './WavesTable/WavesTable';
 
 function App() {
-
-
   const [loading, setIsLoading] = React.useState<Boolean>(false)
 
   // Just a state variable we use to store our user's public wallet.
@@ -204,42 +198,18 @@ function App() {
               </>
           )
           }
-           {allWaves.length > 0 && <div className="tableContainer">
-              <table>
-                <thead>
-                  <th>
-                    Address
-                  </th>
-                  <th>
-                    Time
-                  </th>
-                  <th>
-                    Message
-                  </th>
-                </thead>
-                <tbody>
-                {allWaves.map((wave, index) =>  (
-                  <tr key={`${wave.address}-${index}`} style={{ backgroundColor: "OldLace", marginTop: "16px", padding: "8px" }}>
-                    <td>
-                      {wave.address}
-                    </td>
-                    <td>
-                      {wave.timestamp.toString()}
-                    </td>
-                    <td>
-                      {wave.message}
-                    </td>
-                  </tr>
-                ))
-              }
-                </tbody>
-              </table>
-              </div>}
+          {
+            allWaves.length > 0 && 
+              <div className="tableContainer">
+                  <WavesTable waves={allWaves} />
+              </div>
+          }
         </div>
 
       </div>
     </div>
   );
 }
+
 
 export default App
