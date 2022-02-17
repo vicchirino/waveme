@@ -17,7 +17,7 @@ function App() {
   const [allWaves, setAllWaves] = React.useState<Wave[]>([]);
 
   // Create a variable here that holds the contract address after you deploy!
-  const contractAddress = "0x16f50376217037Da020e8A6FDa65D41961cbC8B4";
+  const contractAddress = "0x758c7b2A31A8E90A1d8C2cd71849ef0E6387Fb59";
 
   // Create a variable here that references the abi content!
   const contractABI = abi.abi;
