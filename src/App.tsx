@@ -25,7 +25,7 @@ function App() {
   // Create a method that gets all waves from your contract
   const getAllWaves = React.useCallback(async () => {
     try {
-      // @ts-expect-error
+      // @ts-expect-error window doesn't have explicit ethereum object.
       const { ethereum } = window
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum)
@@ -40,7 +40,7 @@ function App() {
         const waves = await wavePortalContract.getAllWaves()
 
         // We only need address, timestamp, and message in our UI so let's pick those out
-        let wavesCleaned: Wave[] = []
+        const wavesCleaned: Wave[] = []
         waves.forEach(
           (wave: { waver: string; timestamp: number; message: string }) => {
             wavesCleaned.push({
@@ -64,7 +64,7 @@ function App() {
   const checkIfWalletIsConnected = React.useCallback(async () => {
     try {
       // First make sure we have access to window.ethereum
-      // @ts-expect-error
+      // @ts-expect-error window doesn't have explicit ethereum object.
       const { ethereum } = window
       if (!ethereum) {
         console.log("Make sure you have metamask!")
@@ -91,7 +91,7 @@ function App() {
   // Implement your connectWallet method here
   const connectWallet = React.useCallback(async () => {
     try {
-      // @ts-expect-error
+      // @ts-expect-error window doesn't have explicit ethereum object.
       const { ethereum } = window
 
       if (!ethereum) {
@@ -157,7 +157,7 @@ function App() {
         const waves = await wavePortalContract.getAllWaves()
 
         // We only need address, timestamp, and message in our UI so let's pick those out
-        let wavesCleaned: Wave[] = []
+        const wavesCleaned: Wave[] = []
         waves.forEach(
           (wave: { waver: string; timestamp: number; message: string }) => {
             wavesCleaned.push({
@@ -197,7 +197,7 @@ function App() {
       ])
     }
 
-    // @ts-expect-error
+    // @ts-expect-error window doesn't have explicit ethereum object.
     const { ethereum } = window
 
     if (ethereum) {
