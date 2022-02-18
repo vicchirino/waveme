@@ -7,7 +7,6 @@
   align-items: center;
 }
 
-
 .topArrow {
   stroke-dasharray: 3;
   animation: knot 30s linear infinite reverse;
@@ -16,7 +15,6 @@
 .bottomArrow {
   stroke-dasharray: 3;
   animation: knot 30s linear infinite reverse;
-
 }
 
 .knot {
@@ -24,19 +22,17 @@
   animation: knot 30s linear infinite reverse;
 }
 
-.triangles, .circle {
-
+.triangles,
+.circle {
   animation: beat 0.5s infinite alternate;
-	transform-origin: center;
-
+  transform-origin: center;
 }
-
-
 
 @keyframes beat {
-	to { transform: scale(0.95); }
+  to {
+    transform: scale(0.95);
+  }
 }
-  
 
 @keyframes knot {
   to {

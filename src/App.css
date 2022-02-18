@@ -7,11 +7,11 @@
 }
 
 .tableContainer {
- display: flex;
- justify-content: center;
- width: 100%;
- padding: 64px;
- max-width: 800px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 64px;
+  max-width: 800px;
 }
 
 .dataContainer {
@@ -48,5 +48,3 @@
   border-radius: 5px;
   max-width: 200px;
 }
-
-
