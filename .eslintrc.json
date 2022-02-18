@@ -20,18 +20,16 @@
   },
   "plugins": ["react", "@typescript-eslint", "react-hooks"],
   "rules": {
-    "no-console": "error",
     "no-debugger": "error",
+    "camelcase": "error",
+    "no-unexpected-multiline": "error",
+    "no-console": "warn",
     "no-empty-pattern": "warn",
     "no-useless-catch": "warn",
-    "no-unexpected-multiline": "error",
     "prefer-destructuring": "warn",
-    "camelcase": "error",
     "react/no-unused-state": "warn",
     "react/no-unused-prop-types": "warn",
     "react-hooks/exhaustive-deps": "warn",
-    "import/no-named-as-default-member": "true",
-    "import/no-named-as-default": "true",
-    "@typescript-eslint/no-empty-function": "on"
+    "@typescript-eslint/no-empty-function": "warn"
   }
 }

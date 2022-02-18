@@ -6,8 +6,10 @@ import Loader from "./components/Loader/Loader"
 import { Wave } from "./types"
 import WavesTable from "./components/WavesTable/WavesTable"
 
+const CONTRACT_ADDRESS = "0x758c7b2A31A8E90A1d8C2cd71849ef0E6387Fb59"
+
 function App() {
-  const [loading, setIsLoading] = React.useState<Boolean>(false)
+  const [loading, setIsLoading] = React.useState<boolean>(false)
 
   // Just a state variable we use to store our user's public wallet.
   const [currentAccount, setCurrentAccount] = React.useState("")
@@ -17,7 +19,7 @@ function App() {
   const [allWaves, setAllWaves] = React.useState<Wave[]>([])
 
   // Create a variable here that holds the contract address after you deploy!
-  const contractAddress = "0x758c7b2A31A8E90A1d8C2cd71849ef0E6387Fb59"
+  const contractAddress = CONTRACT_ADDRESS
 
   // Create a variable here that references the abi content!
   const contractABI = abi.abi
@@ -25,7 +27,7 @@ function App() {
   // Create a method that gets all waves from your contract
   const getAllWaves = React.useCallback(async () => {
     try {
-      // @ts-expect-error window doesn't have explicit ethereum object.
+      // @ts-expect-error: Window doesn't have explicit ethereum object.
       const { ethereum } = window
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum)
@@ -59,7 +61,7 @@ function App() {
     } catch (error) {
       console.log(error)
     }
-  }, [contractABI])
+  }, [contractABI, contractAddress])
 
   const checkIfWalletIsConnected = React.useCallback(async () => {
     try {
@@ -76,7 +78,7 @@ function App() {
       const accounts = await ethereum.request({ method: "eth_accounts" })
       console.log("ACCOUNTS OBJECT", accounts)
       if (accounts.length !== 0) {
-        const account = accounts[0]
+        const [account] = accounts
         console.log("Found an authorized account: ", account)
         setCurrentAccount(account)
         await getAllWaves()
@@ -124,7 +126,6 @@ function App() {
     try {
       // @ts-expect-error window doesn't have explicit ethereum object.
       const { ethereum } = window
-
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum)
         const signer = provider.getSigner()
@@ -177,7 +178,7 @@ function App() {
       setIsLoading(false)
       console.log(error)
     }
-  }, [contractABI])
+  }, [contractABI, contractAddress])
 
   /**
    * Listen in for emitter events!
@@ -197,9 +198,8 @@ function App() {
       ])
     }
 
-    // @ts-expect-error window doesn't have explicit ethereum object.
+    // @ts-expect-error: Window doesn't have explicit ethereum object.
     const { ethereum } = window
-
     if (ethereum) {
       const provider = new ethers.providers.Web3Provider(ethereum)
       const signer = provider.getSigner()
@@ -226,8 +226,9 @@ function App() {
         <div className="header">👋 Hey there!</div>
 
         <div className="subheader">
-          I'm Victor from Buenos Aires, Argentina. Connect your Ethereum wallet
-          and wave at me!
+          {
+            "I'm Victor from Buenos Aires, Argentina. Connect your Ethereum wallet and wave at me!"
+          }
         </div>
 
         <div className="body">
