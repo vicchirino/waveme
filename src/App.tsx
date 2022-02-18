@@ -256,8 +256,3 @@ function App() {
 }
 
 export default App
-
-
-  // "lint-staged": {
-  //   "*.{js,css,md,tsx,ts,jsx}": "prettier:all:fix"
-  // },
